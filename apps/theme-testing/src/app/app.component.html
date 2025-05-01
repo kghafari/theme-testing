@@ -1,2 +1,15 @@
-<app-nx-welcome></app-nx-welcome>
+<div class="container">
+  <div style="display: flex; align-items: center; justify-content: flex-end">
+    <mat-icon>light_mode</mat-icon>
+    <mat-slide-toggle (change)="toggleDarkMode($event)"></mat-slide-toggle>
+    <mat-icon>dark_mode</mat-icon>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: flex-end">
+    <mat-icon>ac_unit</mat-icon>
+    <mat-slide-toggle (change)="toggleSpringMode($event)"></mat-slide-toggle>
+    <mat-icon>grass</mat-icon>
+  </div>
+  <app-tester></app-tester>
+</div>
+
 <router-outlet></router-outlet>

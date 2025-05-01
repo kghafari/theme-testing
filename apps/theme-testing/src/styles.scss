@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+/**
+* Generated theme by Material Theme Generator
+* https://materialtheme.arcsine.dev
+* Fork at: https://materialtheme.arcsine.dev/?c=YHBhbGV0dGU$YHByaW1hcnk$YF48IzM0ODczYSIsIj9lcjwjYzJkYmM0IiwiO2VyPCMyMTZhMjV$LCIlPmBePCM3OTc5NzkiLCI~ZXI8I2Q3ZDdkNyIsIjtlcjwjNWM1YzVjfiwid2Fybj5gXjwjZmYwMDAwIiwiP2VyPCNmZmIzYjMiLCI7ZXI8I2ZmMDAwMH4sIj9UZXh0PCMwMDAwMDAiLCI~PTwjZjRmZmVmIiwiO1RleHQ8I2ZmZmZmZiIsIjs9PCMyYTJkMmF$LCJmb250cz5bYEA8KC00fixgQDwoLTN$LGBAPCgtMn4sYEA8KC0xfixgQDxoZWFkbGluZX4sYEA8dGl0bGV$LGBAPHN1YiktMn4sYEA8c3ViKS0xfixgQDxib2R5LTJ$LGBAPGJvZHktMX4sYEA8YnV0dG9ufixgQDxjYXB0aW9ufixgQDxpbnB1dCIsInNpemU$bnVsbH1dLCJpY29uczxGaWxsZWQiLCI~bmVzcz5mYWxzZSwidmVyc2lvbj4xM30=
+*/
+
+@use '@angular/material' as mat;
+
+html {
+  color-scheme: light;
+  background-color: var(--mat-sys-surface);
+  @include mat.theme(
+    (
+      color: mat.$violet-palette,
+      typography: Oswald,
+      density: 0,
+    )
+  );
+}
+
+html.dark-mode {
+  color-scheme: dark;
+  @include mat.theme(
+    (
+      color: mat.$violet-palette,
+      typography: Oswald,
+      density: 0,
+    )
+  );
+}
+
+html.spring-mode {
+  background-color: var(--mat-sys-surface);
+  @include mat.theme(
+    (
+      color: mat.$spring-green-palette,
+      typography: Oswald,
+      density: 0,
+    )
+  );
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
