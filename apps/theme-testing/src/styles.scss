@@ -7,27 +7,54 @@
 
 @use '@angular/material' as mat;
 
+@use './summer_theme-colors.scss' as my-theme;
+
 html {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
   color-scheme: light;
   background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-primary);
   @include mat.theme(
     (
-      color: mat.$violet-palette,
+      color: (
+        primary: my-theme.$primary-palette,
+        tertiary: my-theme.$tertiary-palette,
+      ),
       typography: Oswald,
       density: 0,
+    )
+  );
+
+  // https://material.angular.dev/components/slide-toggle/styling
+  @include mat.slide-toggle-overrides(
+    (
+      track-shape: 6px,
+      handle-shape: 6px,
+    )
+  );
+  @include mat.button-overrides(
+    (
+      filled-horizontal-padding: 66px,
+      outlined-horizontal-padding: 66px,
+      protected-horizontal-padding: 66px,
+      text-horizontal-padding: 66px,
+
+      filled-container-shape: 6px,
+      outlined-container-shape: 6px,
+      protected-container-shape: 6px,
+      text-container-shape: 6px,
     )
   );
 }
 
+html.loaded {
+  opacity: 1;
+}
+
 html.dark-mode {
   color-scheme: dark;
-  @include mat.theme(
-    (
-      color: mat.$violet-palette,
-      typography: Oswald,
-      density: 0,
-    )
-  );
+  background-color: var(--mat-sys-surface);
 }
 
 html.spring-mode {

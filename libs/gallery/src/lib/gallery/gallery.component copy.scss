@@ -1,0 +1,100 @@
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.gallery-items {
+  display: flex;
+  overflow: hidden;
+  width: calc(100% - 80px); /* Account for arrows */
+  margin: 0 auto;
+}
+
+.gallery-item {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.image-container {
+  flex: 0 0 70%; /* Image takes up 70% of the width */
+  display: flex;
+  align-items: center; /* Center image vertically */
+  justify-content: center; /* Center image horizontally */
+  height: 400px; /* Fixed height for the gallery container */
+}
+
+.image-container img {
+  max-width: 100%; /* Scale down if too wide */
+  max-height: 100%; /* Scale down if too tall */
+  object-fit: contain; /* Maintain aspect ratio */
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.details {
+  flex: 0 0 30%; /* Details take up 30% of the width */
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  //   padding-left: 16px;
+  //   justify-content: center;
+}
+
+.thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.thumbnails img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.selectors {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.selectors button {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background: gray;
+  border: none;
+  cursor: pointer;
+}
+
+.selectors button.active {
+  background: black;
+}

@@ -1,0 +1,116 @@
+@use '@angular/material' as mat;
+
+.gallery-container {
+  display: flex;
+  position: relative;
+}
+
+.gallery-item {
+  display: flex;
+  margin-left: 32px;
+  margin-right: 32px;
+  height: 300px; /* Scale down if too tall */
+  max-height: 300px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  min-width: 50%;
+}
+
+.image-container img {
+  max-width: 100%; /* Scale down if too wide */
+  object-fit: contain; /* Maintain aspect ratio */
+  transition: transform 0.3s ease;
+  max-height: 300px;
+}
+
+.image-container img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.details-container {
+  margin-left: 16px;
+  overflow: auto;
+}
+
+.thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.thumbnails img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.selectors {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.selectors button {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background: var(--mat-sys-outline);
+  border: none;
+  cursor: pointer;
+}
+
+.selectors button.active {
+  background: var(--mat-sys-primary);
+}
+
+@media screen and (max-width: 700px) {
+  .gallery-item {
+    flex-wrap: wrap;
+    overflow-x: hidden;
+  }
+  .image-container img {
+    max-width: 100%; /* Scale down if too wide */
+    transition: transform 0.3s ease;
+    max-height: 200px;
+  }
+
+  .image-container {
+    width: 100%;
+    min-width: 100%;
+    max-height: 300px;
+    justify-content: center;
+  }
+
+  .details-container {
+    margin-left: 0;
+  }
+
+  .gallery-container {
+    flex-direction: column;
+  }
+}

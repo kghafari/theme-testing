@@ -1,0 +1,29 @@
+<div class="gallery-container">
+  <button class="arrow left" (click)="scrollLeft()">&#8249;</button>
+  <div class="gallery-item">
+    <div class="image-container">
+      <img [src]="galleryItems[activeIndex].image" alt="Gallery Item" />
+    </div>
+    <div class="details-container">
+      <div style="font-size: x-large">
+        {{ galleryItems[activeIndex].title }}
+      </div>
+      <p>{{ galleryItems[activeIndex].description }}</p>
+      <div class="thumbnails">
+        <img
+          *ngFor="let thumb of galleryItems[activeIndex].thumbnails"
+          [src]="thumb"
+          alt="Thumbnail"
+        />
+      </div>
+    </div>
+  </div>
+  <button class="arrow right" (click)="scrollRight()">&#8250;</button>
+</div>
+<div class="selectors">
+  <button
+    *ngFor="let item of galleryItems; let i = index"
+    [class.active]="i === activeIndex"
+    (click)="navigateTo(i)"
+  ></button>
+</div>

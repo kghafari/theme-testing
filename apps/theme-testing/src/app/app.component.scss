@@ -4,5 +4,12 @@
 
 .container {
   font-family: var(--mat-sys-body-medium-font);
-  color: var(--mat-sys-on-background);
+  color: var(--mat-sys-on-primary);
+
+  @include mat.fab-overrides(
+    (
+      container-shape: 6px,
+      extended-container-shape: 6px,
+    )
+  );
 }
